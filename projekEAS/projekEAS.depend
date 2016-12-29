@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1482752859 source:e:\bantu\projekeas\main.cpp
+	"bagosep.h"
+
+1483014248 e:\bantu\projekeas\bagosep.h
+	<iostream>
+	<stdio.h>
+	<cstdlib>
+	<iomanip>
+	<locale>
+	<sstream>
+	<string.h>
+
