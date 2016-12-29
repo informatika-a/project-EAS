@@ -12,7 +12,6 @@
 using namespace std;
 
 char operatorku[50];
-string hargaTotal,diskonTotal;
 int totalHarga=0,totalDiskon=0;
 char nama[30];
 char pilihan;
@@ -533,119 +532,16 @@ if (strcmp(operatorku,produk.Baju)==0 || strcmp(operatorku,"baju")==0 || strcmp(
         cout<<"\n\tMaaf Menu tidak ada / Anda Salah Input";
     }
 }
-void rupiah(){
+void rupiah(int biaya){
+string harga;
 ostringstream convert;
-convert<<totalHarga;
-hargaTotal=convert.str();
-const char* hargatotal=hargaTotal.c_str();
+convert<<biaya;
+harga=convert.str();
+const char* hargatotal=harga.c_str();
     for(int kounter=0;kounter<strlen(hargatotal);kounter++){
     konversi[strlen(hargatotal)-kounter-1]=hargatotal[kounter];
     }
         for(int kounter=strlen(hargatotal)-1;kounter>=0;kounter--){
-        cout<<konversi[kounter];
-        if(kounter%3==0){
-            if(kounter!=0){
-            cout<<".";
-            }
-        }
-    }
-}
-void rupiahDiskonBaju(){
-    if (diskon.diskonBaju>=3){
-        ostringstream convert;
-        convert<<diskon.diskonBaju;
-        diskon.hargaDiskonBaju=convert.str();
-        const char* hargadiskon=diskon.hargaDiskonBaju.c_str();
-        for(int kounter=0;kounter<strlen(hargadiskon);kounter++){
-        konversi[strlen(hargadiskon)-kounter-1]=hargadiskon[kounter];
-        }
-            for(int kounter=strlen(hargadiskon)-1;kounter>=0;kounter--){
-            cout<<konversi[kounter];
-            if(kounter%3==0){
-                if(kounter!=0){
-                cout<<".";
-                }
-            }
-         }
-    }
-}
-void rupiahDiskonCelana(){
-    ostringstream convert;
-    convert<<diskon.diskonCelana;
-    diskon.hargaDiskonCelana=convert.str();
-    const char* hargadiskon=diskon.hargaDiskonCelana.c_str();
-    for(int kounter=0;kounter<strlen(hargadiskon);kounter++){
-    konversi[strlen(hargadiskon)-kounter-1]=hargadiskon[kounter];
-    }
-        for(int kounter=strlen(hargadiskon)-1;kounter>=0;kounter--){
-        cout<<konversi[kounter];
-        if(kounter%3==0){
-            if(kounter!=0){
-            cout<<".";
-            }
-        }
-    }
-}
-void rupiahDiskonSepatu() {
-    ostringstream convert;
-    convert<<diskon.diskonSepatu;
-    diskon.hargaDiskonSepatu=convert.str();
-    const char* hargadiskon=diskon.hargaDiskonSepatu.c_str();
-    for(int kounter=0;kounter<strlen(hargadiskon);kounter++){
-    konversi[strlen(hargadiskon)-kounter-1]=hargadiskon[kounter];
-    }
-        for(int kounter=strlen(hargadiskon)-1;kounter>=0;kounter--){
-        cout<<konversi[kounter];
-        if(kounter%3==0){
-            if(kounter!=0){
-            cout<<".";
-            }
-        }
-    }
-}
-void rupiahDiskonTas(){
-    ostringstream convert;
-    convert<<diskon.diskonTas;
-    diskon.hargaDiskonTas=convert.str();
-    const char* hargadiskon=diskon.hargaDiskonTas.c_str();
-    for(int kounter=0;kounter<strlen(hargadiskon);kounter++){
-    konversi[strlen(hargadiskon)-kounter-1]=hargadiskon[kounter];
-    }
-        for(int kounter=strlen(hargadiskon)-1;kounter>=0;kounter--){
-        cout<<konversi[kounter];
-        if(kounter%3==0){
-            if(kounter!=0){
-            cout<<".";
-            }
-        }
-    }
-}
-void rupiahDiskonJam(){
-    ostringstream convert;
-    convert<<diskon.diskonJam;
-    diskon.hargaDiskonJam=convert.str();
-    const char* hargadiskon=diskon.hargaDiskonJam.c_str();
-    for(int kounter=0;kounter<strlen(hargadiskon);kounter++){
-    konversi[strlen(hargadiskon)-kounter-1]=hargadiskon[kounter];
-    }
-        for(int kounter=strlen(hargadiskon)-1;kounter>=0;kounter--){
-        cout<<konversi[kounter];
-        if(kounter%3==0){
-            if(kounter!=0){
-            cout<<".";
-            }
-        }
-    }
-}
-void totalsemua(){
-    ostringstream convert;
-    convert<<totalDiskon;
-    diskonTotal=convert.str();
-    const char* hargadiskon=diskonTotal.c_str();
-    for(int kounter=0;kounter<strlen(hargadiskon);kounter++){
-    konversi[strlen(hargadiskon)-kounter-1]=hargadiskon[kounter];
-    }
-        for(int kounter=strlen(hargadiskon)-1;kounter>=0;kounter--){
         cout<<konversi[kounter];
         if(kounter%3==0){
             if(kounter!=0){
@@ -663,33 +559,28 @@ void detailDiskon(){
     banyak.banyakjam=merkJam.Bulgari+merkJam.Casio+merkJam.GShock+merkJam.Rolex;
     //Output Diskon
     if(banyak.banyakbaju>=3){
-    diskon.diskonBaju=hasil.Baju-(0.05*hasil.Baju);
-    cout<<"\n\n\t\t\t\t     Disc Baju 5%     = Rp. ";rupiahDiskonBaju();
+    diskon.diskonBaju=(0.05*hasil.Baju);
+    cout<<"\n\n\t\t\t\t     Disc Baju 5%     = Rp. ";rupiah(diskon.diskonBaju);
         }
     if(banyak.banyakcelana>=4){
-    diskon.diskonCelana=hasil.Celana -(0.10*hasil.Celana);
-    cout<<"\n\n\t\t\t\t     Disc Celana 10%  = Rp. ";rupiahDiskonCelana();
+    diskon.diskonCelana=(0.10*hasil.Celana);
+    cout<<"\n\n\t\t\t\t     Disc Celana 10%  = Rp. ";rupiah(diskon.diskonCelana);
         }
     if(banyak.banyaksepatu>=5){
-    diskon.diskonSepatu=hasil.Sepatu -(0.15*hasil.Sepatu);
-    cout<<"\n\n\t\t\t\t     Disc Sepatu 15%  = Rp. ";rupiahDiskonSepatu();
+    diskon.diskonSepatu=(0.15*hasil.Sepatu);
+    cout<<"\n\n\t\t\t\t     Disc Sepatu 15%  = Rp. ";rupiah(diskon.diskonSepatu);
         }
     if(banyak.banyaktas>=6){
-    diskon.diskonTas=hasil.Tas -(0.20*hasil.Tas);
-    cout<<"\n\n\t\t\t\t     Disc Tas 20%     = Rp. ";rupiahDiskonTas();
+    diskon.diskonTas=(0.20*hasil.Tas);
+    cout<<"\n\n\t\t\t\t     Disc Tas 20%     = Rp. ";rupiah(diskon.diskonTas);
         }
     if(banyak.banyakjam>=8){
-    diskon.diskonJam=hasil.Jam -(0.25*hasil.Jam);
-    cout<<"\n\n\t\t\t\t     Disc Jam 25%     = Rp. ";rupiahDiskonJam();
+    diskon.diskonJam=(0.25*hasil.Jam);
+    cout<<"\n\n\t\t\t\t     Disc Jam 25%     = Rp. ";rupiah(diskon.diskonJam);
         }
     //Output Total Semua
-    if(diskon.diskonBaju!=0 || diskon.diskonCelana!=0 || diskon.diskonJam!=0 || diskon.diskonSepatu!=0 || diskon.diskonTas!=0 ){
-    totalDiskon=totalHarga-(totalDiskon+diskon.diskonBaju+diskon.diskonCelana+diskon.diskonJam+diskon.diskonSepatu+diskon.diskonTas);
-    cout<<"\n\n\t\t\t\t     Total Incl. Disc = Rp. ";totalsemua();
-    }
-    if(totalDiskon==0){
-    cout<<"\n\n\t\t\t\t     Total Incl. Disc = Rp. ";rupiah();
-    }
+    totalDiskon=(diskon.diskonBaju+diskon.diskonCelana+diskon.diskonJam+diskon.diskonSepatu+diskon.diskonTas);
+    cout<<"\n\n\t\t\t\t     Total Incl. Disc = Rp. ";rupiah(totalDiskon);
 }
 void nota(){
     system("CLS");
@@ -706,14 +597,17 @@ void nota(){
     notaTas();
     notaJam();
     cout<<"\n\t";garis2();
-    totalHarga=totalHarga+hasil.Baju+hasil.Celana+hasil.Sepatu+hasil.Tas+hasil.Jam;
-    cout<<"\n\n\t\t\t\t     Total Belanja    = Rp. ";rupiah();
+    totalHarga=hasil.Baju+hasil.Celana+hasil.Sepatu+hasil.Tas+hasil.Jam;
+    cout<<"\n\n\t\t\t\t     Total Belanja    = Rp. ";rupiah(totalHarga);
     detailDiskon();
+    cout<<"\n";
+    totalHarga=hasil.Baju+hasil.Celana+hasil.Sepatu+hasil.Tas+hasil.Jam-totalDiskon;
+    cout<<"\n\n\t\t\t\t     Total Belanja Setelah Diskom    = Rp. ";rupiah(totalHarga);
     cout<<"\n";
     garis2();
     cout<<"\n\n\t     Barang yang sudah dibeli tidak dapat dikembalikan";
     cout<<"\n\n\t\t\tKecuali sudah ada perjanjian\n\n";
-    cout<<"\n\t    COPYRIGHT © 2016 CERITANYA DISTRO ALL RIGHT RESERVED";
+    cout<<"\n\t    COPYRIGHT Â© 2016 CERITANYA DISTRO ALL RIGHT RESERVED";
     cout<<"\n\t\t\t     CREATED BY BAGOSEP";
 }
 #endif // BAGOSEP_H_INCLUDED
