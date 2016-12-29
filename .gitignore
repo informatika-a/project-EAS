@@ -3,7 +3,9 @@
 *.exe
 
 #Folder
-\bin
+/bin/Debug
+/obj
+\bin\Debug
 \obj
 
 # Ada Library Information
