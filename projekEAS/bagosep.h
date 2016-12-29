@@ -684,7 +684,7 @@ void detailDiskon(){
         }
     //Output Total Semua
     if(diskon.diskonBaju!=0 || diskon.diskonCelana!=0 || diskon.diskonJam!=0 || diskon.diskonSepatu!=0 || diskon.diskonTas!=0 ){
-    totalDiskon=(totalDiskon+diskon.diskonBaju+diskon.diskonCelana+diskon.diskonJam+diskon.diskonSepatu+diskon.diskonTas);
+    totalDiskon=totalHarga-(totalDiskon+diskon.diskonBaju+diskon.diskonCelana+diskon.diskonJam+diskon.diskonSepatu+diskon.diskonTas);
     cout<<"\n\n\t\t\t\t     Total Incl. Disc = Rp. ";totalsemua();
     }
     if(totalDiskon==0){
