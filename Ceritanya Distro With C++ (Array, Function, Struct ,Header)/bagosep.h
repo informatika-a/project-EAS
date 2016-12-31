@@ -560,27 +560,27 @@ void detailDiskon(){
     //Output Diskon
     if(banyak.banyakbaju>=3){
     diskon.diskonBaju=(0.05*hasil.Baju);
-    cout<<"\n\n\t\t\t\t     Disc Baju 5%     = Rp. ";rupiah(diskon.diskonBaju);
+    cout<<"\n\n\t\t\t\tDisc Baju 5%         = Rp. -";rupiah(diskon.diskonBaju);
         }
     if(banyak.banyakcelana>=4){
     diskon.diskonCelana=(0.10*hasil.Celana);
-    cout<<"\n\n\t\t\t\t     Disc Celana 10%  = Rp. ";rupiah(diskon.diskonCelana);
+    cout<<"\n\n\t\t\t\tDisc Celana 10%      = Rp. -";rupiah(diskon.diskonCelana);
         }
     if(banyak.banyaksepatu>=5){
     diskon.diskonSepatu=(0.15*hasil.Sepatu);
-    cout<<"\n\n\t\t\t\t     Disc Sepatu 15%  = Rp. ";rupiah(diskon.diskonSepatu);
+    cout<<"\n\n\t\t\t\tDisc Sepatu 15%      = Rp. -";rupiah(diskon.diskonSepatu);
         }
     if(banyak.banyaktas>=6){
     diskon.diskonTas=(0.20*hasil.Tas);
-    cout<<"\n\n\t\t\t\t     Disc Tas 20%     = Rp. ";rupiah(diskon.diskonTas);
+    cout<<"\n\n\t\t\t\tDisc Tas 20%         = Rp. -";rupiah(diskon.diskonTas);
         }
     if(banyak.banyakjam>=8){
     diskon.diskonJam=(0.25*hasil.Jam);
-    cout<<"\n\n\t\t\t\t     Disc Jam 25%     = Rp. ";rupiah(diskon.diskonJam);
+    cout<<"\n\n\t\t\t\tDisc Jam 25%         = Rp. -";rupiah(diskon.diskonJam);
         }
     //Output Total Semua
     totalDiskon=(diskon.diskonBaju+diskon.diskonCelana+diskon.diskonJam+diskon.diskonSepatu+diskon.diskonTas);
-    cout<<"\n\n\t\t\t\t     Total Incl. Disc = Rp. ";rupiah(totalDiskon);
+   // cout<<"\n\n\t\t\t\t     Total Incl. Disc = Rp. ";rupiah(totalDiskon);
 }
 void nota(){
     system("CLS");
@@ -598,16 +598,19 @@ void nota(){
     notaJam();
     cout<<"\n\t";garis2();
     totalHarga=hasil.Baju+hasil.Celana+hasil.Sepatu+hasil.Tas+hasil.Jam;
-    cout<<"\n\n\t\t\t\t     Total Belanja    = Rp. ";rupiah(totalHarga);
+    cout<<"\n\n\t\t\t\tTotal Belanja        = Rp. ";rupiah(totalHarga);
     detailDiskon();
-    cout<<"\n";
+    if(totalDiskon==0){
+        cout<<"\n\n\t\t\t\tDisc 0%          = Rp. 0";
+    }
     totalHarga=hasil.Baju+hasil.Celana+hasil.Sepatu+hasil.Tas+hasil.Jam-totalDiskon;
-    cout<<"\n\n\t\t\t\t     Total Belanja Setelah Diskom    = Rp. ";rupiah(totalHarga);
+
+    cout<<"\n\n\t\t\t\tTotal Setelah Diskon = Rp. ";rupiah(totalHarga);
     cout<<"\n";
     garis2();
     cout<<"\n\n\t     Barang yang sudah dibeli tidak dapat dikembalikan";
     cout<<"\n\n\t\t\tKecuali sudah ada perjanjian\n\n";
-    cout<<"\n\t    COPYRIGHT Â© 2016 CERITANYA DISTRO ALL RIGHT RESERVED";
+    cout<<"\n\t    COPYRIGHT © 2016 CERITANYA DISTRO ALL RIGHT RESERVED";
     cout<<"\n\t\t\t     CREATED BY BAGOSEP";
 }
 #endif // BAGOSEP_H_INCLUDED
