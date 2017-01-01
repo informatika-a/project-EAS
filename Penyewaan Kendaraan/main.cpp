@@ -45,26 +45,24 @@ int main() {
         cout << "No. HP         = " << pelanggan[kounter].No_hp << endl;
 
     }
-
+    system("PAUSE");
+    bool tes;
     do{
+    system("CLS");
     menu();
 
-    pilihan(pilih);
+    tes=pilihan();
 
-        do{
+    if(tes==false)tes=kendaraan();
 
-        kendaraan(merek);
+    if(tes==false)tes=tipe();
 
-        cout << "ingin kembali ke tipe kendaraan [y/t] = ";
-        cin >> ulang;
-        }while(ulang == 'y');
-
+    if(tes==true){
     cout << "ingin kembali lagi ke menu [y/t] = ";
     cin >> kembali;
-    system("CLS");
-    }while(kembali == 'y');
+    }
 
-    tipe(keterangan);
+    }while(kembali=='y');
 
     cout << endl;
 

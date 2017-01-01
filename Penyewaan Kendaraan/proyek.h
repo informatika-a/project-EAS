@@ -11,7 +11,7 @@ char penjelasan[100];
 int pilih_mobil;
 int pilih_motor;
 int pilih_sepeda;
-
+bool ulang;
 struct data{
     char nama[50];
     char alamat[50];
@@ -117,9 +117,8 @@ void menu(){
     cout << "2.Motor" << endl;
     cout << "3.Sepeda" << endl;
 }
-
-void pilihan(int pilih) {
-
+bool pilihan() {
+    ulang=false;
     cout << "masukan nama kendaraan yang ingin di pinjam = ";
     cin >> pilihlah;
 
@@ -154,12 +153,14 @@ void pilihan(int pilih) {
         garis();
         cout << "       maaf pilihan anda tidak ada di menu         " << endl;
         garis();
+        ulang=true;
+        system("PAUSE");
     }
+    return ulang;
 }
 
-void kendaraan(int merek) {
-
-
+bool kendaraan() {
+    ulang=false;
     cout << endl;
     cout << "pilih tipe kendaraan = ";
     cin >> memilih;
@@ -243,11 +244,14 @@ void kendaraan(int merek) {
         garis();
         cout << "       maaf tipe pilihan anda tidak ada disini     " << endl;
         garis();
+        system("PAUSE");
+        ulang=true;
     }
+    return ulang;
 }
 
-void tipe(int keterangan) {
-
+bool tipe() {
+    ulang=false;
 
     cout << endl;
     cout << "masukan merek kendaraan yang ingin dipilih = ";
@@ -626,6 +630,29 @@ void tipe(int keterangan) {
         cout << " -Tahun pembuatan\t: 2015" << endl;
         cout << " -Harga sewa\t\t: Rp.50.000" << endl;
     }
+    else{
+        cout<<"Pilihan Tidak tersedia"<<endl;
+        ulang=true;
+    }
+    return ulang;
+}
+
+void terlambat(int telat){
+    int denda;
+        if (strcmp(pilihlah,"mobil") == 0 || strcmp(pilihlah, "Mobil") == 0) {
+            denda=telat*500000;
+    }
+    else if (strcmp(pilihlah,"motor") == 0 || strcmp(pilihlah, "Motor") == 0) {
+            denda=telat*250000;
+    }
+    else  if (strcmp(pilihlah,"sepeda") == 0 || strcmp(pilihlah, "sepeda") == 0) {
+            denda=telat*50000;
+    }
+    cout<<"Denda Keterlambatan Pengembalian = "<<denda;
+}
+
+void tersedia{
+
 }
 
 #endif // PROYEK_H_INCLUDED
