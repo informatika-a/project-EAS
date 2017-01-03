@@ -3,11 +3,8 @@
 #include <iostream>
 #include <stdio.h>
 #include <cstdlib>
-#include <iomanip>
-#include <locale>
 #include <sstream>
 #include <string.h>
-
 
 using namespace std;
 
@@ -82,7 +79,6 @@ void introJam(){
     cout<<"\n\t\t1. GShock\t\tRp. 210.000\n\t\t2. Bulgari\t\tRp. 280.000\n";
     cout<<"\t\t3. Rolex \t\tRp. 240.000\n\t\t4. Casio\t\tRp. 300.000\n";
 }
-
 
 struct{
 int Vans=55000,ThreeSecond=65000,Macbeth=60000,Kidrock=45000;
@@ -160,7 +156,6 @@ struct{
 int diskonBaju=0,diskonCelana=0,diskonSepatu=0,diskonTas=0,diskonJam=0;
 string hargaDiskonBaju,hargaDiskonCelana,hargaDiskonSepatu,hargaDiskonTas,hargaDiskonJam;
 }diskon;
-
 
 int listBaju(char kodeProdukBaju[20], int hasilBaju){
     if(strcmp(kode.pilihanBaju,produkBaju.Vans)==0 || strcmp(kode.pilihanBaju,"vans")==0 || strcmp(kode.pilihanBaju,"1")==0){
@@ -375,7 +370,6 @@ void notaBaju(){
     if(merkBaju.Kidrock!=0){
         cout<<"\n\n\t\t"<<produkBaju.Kidrock<<"\t\t\tRp. 45.000\t"<<merkBaju.Kidrock;
     }
-    //garis2();
 
 }
 
@@ -384,7 +378,6 @@ void notaCelana(){
         cout<<"\n\n\t\tCelana :";
         cout<<"\n\n\t\tMerek\t\t\tHarga\t\tSebanyak";
         garis2();
-
     }
     if(merkCelana.Levis!=0){
         cout<<"\n\n\t\t"<<produkCelana.Levis<<"\t\t\tRp. 130.000\t"<<merkCelana.Levis;
@@ -398,7 +391,6 @@ void notaCelana(){
     if(merkCelana.Lee!=0){
         cout<<"\n\n\t\t"<<produkCelana.Lee<<"\t\t\tRp. 150.000\t"<<merkCelana.Lee;
     }
-   // garis2();
 }
 
 void notaSepatu(){
@@ -406,7 +398,6 @@ void notaSepatu(){
         cout<<"\n\n\t\tSepatu :";
         cout<<"\n\n\t\tMerek\t\t\tHarga\t\tSebanyak";
         garis2();
-
     }
     if(merkSepatu.Adidas!=0){
         cout<<"\n\n\t\t"<<produkSepatu.Adidas<<"\t\t\tRp. 220.000\t"<<merkSepatu.Adidas;
@@ -420,7 +411,6 @@ void notaSepatu(){
     if(merkSepatu.Converse!=0){
         cout<<"\n\n\t\t"<<produkSepatu.Converse<<"\t\tRp. 230.000\t"<<merkSepatu.Converse;
     }
-   // garis2();
 }
 
 void notaTas(){
@@ -442,7 +432,6 @@ void notaTas(){
     if(merkTas.Palazzo!=0){
         cout<<"\n\n\t\t"<<produkTas.Palazzo<<"\t\t\tRp. 100.000\t"<<merkTas.Palazzo;
     }
-   // garis2();
 }
 
 void notaJam(){
@@ -464,7 +453,6 @@ void notaJam(){
     if(merkJam.Casio!=0){
         cout<<"\n\n\t\t"<<produkJam.Casio<<"\t\t\tRp. 300.000\t"<<merkJam.Casio;
     }
-   // garis2();
 }
 
 void menuProduk(){
@@ -474,7 +462,6 @@ if (strcmp(operatorku,produk.Baju)==0 || strcmp(operatorku,"baju")==0 || strcmp(
         introBaju();
         cout<<"\n\tAnda Ingin Membeli Produk Apa [Input Merk / Nomer] = ";cin>>kode.pilihanBaju;
         hasil.Baju=listBaju(kode.pilihanBaju, hasil.Baju);
-        //cout<<hasil.Baju;
         cout<<"\n\n\tJika Anda Membeli Produk Baju lebih dari 3 maka diskon Baju 5%";
         cout<<"\n\n        Apakah Anda Ingin Memilih Baju Lagi ? [ya/tidak] = ";cin>>ulang;
         system("CLS");
@@ -485,7 +472,6 @@ if (strcmp(operatorku,produk.Baju)==0 || strcmp(operatorku,"baju")==0 || strcmp(
         introCelana();
         cout<<"\n\tAnda Ingin Membeli Produk Apa [Input Merk / Nomer] = ";cin>>kode.pilihanCelana;
         hasil.Celana=listCelana(kode.pilihanCelana, hasil.Celana);
-        //cout<<hasil.Celana;
         cout<<"\n\n\tJika Anda Membeli Produk Celana Lebih dari 4 maka diskon Celana 10%";
         cout<<"\n\n        Apakah Anda Ingin Memilih Celana Lagi ? [ya/tidak] = ";cin>>ulang;
         system("CLS");
@@ -497,7 +483,6 @@ if (strcmp(operatorku,produk.Baju)==0 || strcmp(operatorku,"baju")==0 || strcmp(
         introSepatu();
         cout<<"\n\tAnda Ingin Membeli Produk Apa [Input Merk / Nomer] = ";cin>>kode.pilihanSepatu;
         hasil.Sepatu=listSepatu(kode.pilihanSepatu, hasil.Sepatu);
-        //cout<<hasil.Celana;
         cout<<"\n\n\tJika Anda Membeli Produk Sepatu lebih dari 5 maka diskon Sepatu 15%";
         cout<<"\n\n        Apakah Anda Ingin Memilih Sepatu Lagi ? [ya/tidak] = ";cin>>ulang;
         system("CLS");
@@ -509,7 +494,6 @@ if (strcmp(operatorku,produk.Baju)==0 || strcmp(operatorku,"baju")==0 || strcmp(
         introTas();
         cout<<"\n\tAnda Ingin Membeli Produk Apa [Input Merk / Nomer] = ";cin>>kode.pilihanTas;
         hasil.Tas=listTas(kode.pilihanTas, hasil.Tas);
-        //cout<<hasil.Celana;
         cout<<"\n\n\tJika Anda Membeli Produk Tas lebih dari 6 maka diskon Tas 20%";
         cout<<"\n\n        Apakah Anda Ingin Memilih Tas Lagi ? [ya/tidak] = ";cin>>ulang;
         system("CLS");
@@ -521,7 +505,6 @@ if (strcmp(operatorku,produk.Baju)==0 || strcmp(operatorku,"baju")==0 || strcmp(
         introJam();
         cout<<"\n\tAnda Ingin Membeli Produk Apa [Input Merk / Nomer] = ";cin>>kode.pilihanJam;
         hasil.Jam=listJam(kode.pilihanJam, hasil.Jam);
-        //cout<<hasil.Celana;
         cout<<"\n\n\tJika Anda Membeli Produk Jam lebih dari 8 maka diskon Jam 25%";
         cout<<"\n\n        Apakah Anda Ingin Memilih Jam Lagi ? [ya/tidak] = ";cin>>ulang;
         system("CLS");
@@ -532,11 +515,12 @@ if (strcmp(operatorku,produk.Baju)==0 || strcmp(operatorku,"baju")==0 || strcmp(
         cout<<"\n\tMaaf Menu tidak ada / Anda Salah Input";
     }
 }
+
 void rupiah(int biaya){
 string harga;
-ostringstream convert;
-convert<<biaya;
-harga=convert.str();
+ostringstream konvert;
+konvert<<biaya;
+harga=konvert.str();
 const char* hargatotal=harga.c_str();
     for(int kounter=0;kounter<strlen(hargatotal);kounter++){
     konversi[strlen(hargatotal)-kounter-1]=hargatotal[kounter];
@@ -550,13 +534,9 @@ const char* hargatotal=harga.c_str();
         }
     }
 }
+
 void detailDiskon(){
 //Proses Diskon
-    banyak.banyakbaju=merkBaju.Vans+merkBaju.ThreeSecond+merkBaju.Kidrock+merkBaju.Macbeth;
-    banyak.banyakcelana=merkCelana.Diesel+merkCelana.Jeans+merkCelana.Lee+merkCelana.Levis;
-    banyak.banyaksepatu=merkSepatu.Adidas+merkSepatu.Converse+merkSepatu.NewBalance+merkSepatu.Nike;
-    banyak.banyaktas=merkTas.Eiger+merkTas.Palazzo+merkTas.Polo+merkTas.Reebok;
-    banyak.banyakjam=merkJam.Bulgari+merkJam.Casio+merkJam.GShock+merkJam.Rolex;
     //Output Diskon
     if(banyak.banyakbaju>=3){
     diskon.diskonBaju=(0.05*hasil.Baju);
@@ -580,8 +560,8 @@ void detailDiskon(){
         }
     //Output Total Semua
     totalDiskon=(diskon.diskonBaju+diskon.diskonCelana+diskon.diskonJam+diskon.diskonSepatu+diskon.diskonTas);
-   // cout<<"\n\n\t\t\t\t     Total Incl. Disc = Rp. ";rupiah(totalDiskon);
 }
+
 void nota(){
     system("CLS");
     cout<<"\t\t\t\tCeritanya Distro";
@@ -601,7 +581,7 @@ void nota(){
     cout<<"\n\n\t\t\t\tTotal Belanja        = Rp. ";rupiah(totalHarga);
     detailDiskon();
     if(totalDiskon==0){
-        cout<<"\n\n\t\t\t\tDisc 0%          = Rp. 0";
+        cout<<"\n\n\t\t\t\tDisc 0%              = Rp. 0";
     }
     totalHarga=hasil.Baju+hasil.Celana+hasil.Sepatu+hasil.Tas+hasil.Jam-totalDiskon;
 
